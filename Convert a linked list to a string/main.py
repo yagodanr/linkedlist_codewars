@@ -9,7 +9,10 @@ def stringify(node: Node) -> str:
     """
     converts linked list to string
     """
-    ...
+    if node is None:
+        return "None"
+
+    return f"{node.data} -> {stringify(node.next)}"
 
 
 
