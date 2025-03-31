@@ -1,5 +1,7 @@
 import codewars_test as test
 
+from main import *
+
 @test.describe("Tests")
 def te():
     @test.it("should be able to handle an empty list.")

@@ -35,5 +35,26 @@ def build_one_two_three():
 
 
 def sorted_insert(head, data):
-    ...
+    if head is None:
+        head = push(head, data)
+        return head
+
+    tmp = Node(data)
+    if data < head.data:
+        tmp.next = head
+        head = tmp
+        return head
+
+    cur = head
+    while cur is not None:
+        if cur.next is None:
+            cur.next = tmp
+            return head
+
+        if cur.data < data < cur.next.data:
+            tmp.next = cur.next
+            cur.next = tmp
+            return head
+        cur = cur.next
+    raise Exception
 
