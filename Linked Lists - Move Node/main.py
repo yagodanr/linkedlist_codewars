@@ -11,4 +11,8 @@ class Context(object):
 def move_node(source, dest):
     # Your code goes here.
     # Remember to return the context.
+    tmp = source
+    source = source.next
+    tmp.next = dest
+    dest = tmp
     return Context(source, dest)
